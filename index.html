@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DK Creative Studio - Design, Brand and Grow">
+<title>DK Creative Studio | Creative Design Agency</title>
+<style>
+:root{--bg:#050b18;--panel:#0b1830;--line:#203657;--text:#f7f8ff;--muted:#b9c6dc;--purple:#a33cff;--blue:#078cff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:99;background:#040b18f5;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.navbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{font-size:38px;font-weight:900;font-style:italic;letter-spacing:-5px;padding-right:5px;background:linear-gradient(120deg,#fff,#ad77ff,#00a0ff);color:transparent;background-clip:text}
+.brand strong{display:block;font-size:18px}.brand small{display:block;color:#aebdd5;font-size:10px;letter-spacing:1.3px}
+.nav-links{display:flex;align-items:center;gap:23px}
+.nav-links a{font-size:13px;color:#e4eafa}.nav-links a:hover{color:#b77cff}
+.nav-links .admin{padding:10px 13px;border:1px solid #7147ba;border-radius:9px;background:linear-gradient(110deg,#40206f,#103a68)}
+.menu{display:none;background:#101e34;color:white;border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.hero{background:radial-gradient(ellipse at 80% 50%,#3721a64c,transparent 38%),linear-gradient(120deg,#050b18,#0a1025 60%,#071a31);border-bottom:1px solid #1b2c46}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;min-height:430px;padding:35px 0}
+.kicker{color:#c080ff;font-size:13px;font-weight:bold;letter-spacing:1px}
+h1{font-size:clamp(42px,5.5vw,67px);line-height:1.08;letter-spacing:-2px;margin:15px 0}
+.gradient{background:linear-gradient(90deg,#c044ff,#008fff);color:transparent;background-clip:text}
+.hero p{color:#c1cce0;max-width:480px;font-size:15px;margin-bottom:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:28px;padding:12px 22px;background:linear-gradient(100deg,#a32cff,#008dff);color:white;font-weight:bold;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.art{position:relative;min-height:310px;display:flex;justify-content:center;align-items:center;background:radial-gradient(ellipse,#282a7955,transparent 68%)}
+.art-note{position:absolute;right:7%;top:10px;color:#2bc6ff;font-style:italic;font-size:20px;transform:rotate(-8deg)}
+.desk{position:absolute;bottom:35px;left:0;right:0;height:65px;background:linear-gradient(160deg,#29324a,#080d18);transform:skewY(-4deg);border-top:2px solid #394767}
+.laptop{position:relative;z-index:2;width:65%;padding:9px;border:2px solid #7987a8;border-radius:10px;background:#10192a;transform:rotate(-3deg);box-shadow:0 20px 35px #0009}
+.screen{height:165px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 80% 20%,#164eaa,transparent 45%),#030916;border:1px solid #273c60}
+.screen .logo{font-size:44px}.screen strong{font-size:15px}.screen small{font-size:9px;letter-spacing:1px;color:#c3d0e7}
+.laptop-base{height:12px;margin:0 -17px;background:linear-gradient(#8492ad,#202a40);border-radius:0 0 12px 12px}
+.plant{position:absolute;right:0;bottom:66px;font-size:60px}.pencil{position:absolute;left:3%;bottom:75px;font-size:38px}
+section{padding:36px 0}
+.section-title{font-size:30px;margin:4px 0}.sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+.services,.portfolio{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{padding:19px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#0c1b33,#060e1c);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#8457e8}
+.icon{width:51px;height:51px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#b341ff,#3455ee);font-size:24px;margin-bottom:12px}
+.card h3{font-size:16px;margin-bottom:6px}.card p{font-size:12px;color:#c2cde0;margin-bottom:10px}.card a{font-size:12px;color:#bd91ff}
+.portfolio .card{min-height:145px;background:radial-gradient(ellipse at 90% 0%,#4c24a833,transparent 50%),#09162a}
+.order{background:radial-gradient(ellipse at 90% 20%,#3b1c8340,transparent 40%),#040d1b;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.order-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.form-box{border:1px solid var(--line);border-radius:15px;padding:23px;background:linear-gradient(145deg,#0b1930,#050d1a)}
+.form-box h2{font-size:30px}.form-box p{color:var(--muted);font-size:13px;margin:5px 0 15px}
+label{display:block;font-size:12px;margin:9px 0 5px;color:#e3e9f6}
+input,select,textarea{width:100%;padding:11px;border:1px solid #2b4162;border-radius:8px;background:#101e34;color:white;margin-bottom:5px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#a35bff}
+textarea{min-height:85px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.whatsapp{width:100%;background:linear-gradient(90deg,#08b96a,#00ca79);margin-top:12px}
+.contact-note{text-align:center;font-size:11px;color:var(--muted);margin-top:10px}.contact-note a{color:#36e8a2}
+.order-art h3{font-size:30px;font-style:italic;color:#c2b4ff;margin-bottom:22px;transform:rotate(-3deg)}
+.benefit{margin:13px 0;color:#dce5f5;font-size:14px}.benefit span{display:inline-grid;place-items:center;background:#38258c;border-radius:50%;width:31px;height:31px;margin-right:10px}
+footer{padding:24px 0;background:#030815}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.socials{display:flex;gap:10px;flex-wrap:wrap}
+.socials a{display:grid;place-items:center;width:38px;height:38px;border:1px solid #293e5f;border-radius:50%;background:#0c1930;font-weight:bold}
+.socials a:hover{background:linear-gradient(135deg,#a33cff,#078cff)}
+.footer-contact{font-size:12px;color:var(--muted)}.footer-contact a{color:#d2baff}
+.copyright{text-align:center;color:#8494ae;border-top:1px solid #1a2b45;margin-top:20px;padding-top:13px;font-size:11px}
+@media(max-width:900px){.nav-links{gap:12px}.hero-grid{grid-template-columns:1fr}.art{min-height:290px}.order-grid{grid-template-columns:1fr}.services,.portfolio{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.navbar{min-height:70px}.menu{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#061326;padding:20px 5%;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.hero-grid{padding:35px 0}.services,.portfolio{grid-template-columns:1fr}.form-row{grid-template-columns:1fr;gap:0}.footer-row{align-items:flex-start;flex-direction:column}h1{font-size:44px}.section-title{font-size:27px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="container navbar">
+  <a class="brand" href="#home"><span class="logo">DK</span><span><strong>Creative Studio</strong><small>DESIGN · BRAND · GROW</small></span></a>
+  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">Home</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#order">Contact</a><a class="admin" href="admin.html">🔐 Admin Panel</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+ <div><div class="kicker">WELCOME TO DK CREATIVE STUDIO</div><h1>Your Ideas,<br>Our <span class="gradient" id="heroWord">Creativity</span></h1><p>Creative designs and modern digital solutions that help your brand stand out. From logos to responsive websites, we bring your ideas to life.</p><a class="btn" href="#services">Explore Services &nbsp; →</a></div>
+ <div class="art" aria-label="Creative desk illustration"><div class="art-note">Design<br>Create<br>Inspire</div><div class="pencil">✏️ 🖌️</div><div class="desk"></div><div class="laptop"><div class="screen"><span class="logo">DK</span><strong>Creative Studio</strong><small>DESIGN · BRAND · GROW</small></div><div class="laptop-base"></div></div><div class="plant">🪴</div></div>
+</div></section>
+<section id="services"><div class="container"><div class="kicker">OUR SERVICES</div><h2 class="section-title">What We Offer</h2><p class="sub">Creative solutions for your brand, business and digital presence.</p>
+<div class="services">
+ <article class="card"><div class="icon">✒</div><h3>Logo Design</h3><p>Unique and memorable logos for your brand.</p><a href="#order" data-service="Logo Design">Learn More →</a></article>
+ <article class="card"><div class="icon">▣</div><h3>Poster Design</h3><p>Eye-catching posters for events and promotions.</p><a href="#order" data-service="Poster Design">Learn More →</a></article>
+ <article class="card"><div class="icon">▤</div><h3>Visiting Card</h3><p>Professional business cards that make an impression.</p><a href="#order" data-service="Visiting Card">Learn More →</a></article>
+ <article class="card"><div class="icon">⌘</div><h3>Website Design</h3><p>Modern responsive websites for your business.</p><a href="#order" data-service="Website Design">Learn More →</a></article>
+ <article class="card"><div class="icon">▧</div><h3>Social Media Design</h3><p>Creative posts and banners for social platforms.</p><a href="#order" data-service="Social Media Design">Learn More →</a></article>
+ <article class="card"><div class="icon">▤</div><h3>Brochure Design</h3><p>Professional brochures to showcase your services.</p><a href="#order" data-service="Brochure Design">Learn More →</a></article>
+ <article class="card"><div class="icon">▧</div><h3>Flyer Design</h3><p>Clear, attractive flyers for your campaigns.</p><a href="#order" data-service="Flyer Design">Learn More →</a></article>
+ <article class="card"><div class="icon">▣</div><h3>Photo Editing</h3><p>Careful editing and retouching for your photos.</p><a href="#order" data-service="Photo Editing">Learn More →</a></article>
+</div></div></section>
+<section id="portfolio"><div class="container"><div class="kicker">OUR WORK</div><h2 class="section-title">Creative Portfolio</h2><p class="sub">A selection of the creative services we can make for your brand.</p>
+<div class="portfolio">
+ <article class="card"><div class="icon">✦</div><h3>Brand Identity</h3><p>Logo concepts and visual brand direction.</p></article>
+ <article class="card"><div class="icon">▣</div><h3>Social Media Posts</h3><p>Promotional creatives for your audience.</p></article>
+ <article class="card"><div class="icon">⌘</div><h3>Website Concepts</h3><p>Clean layouts and responsive design.</p></article>
+ <article class="card"><div class="icon">✧</div><h3>Print Designs</h3><p>Posters, flyers and business cards.</p></article>
+</div></div></section>
+<section class="order" id="order"><div class="container order-grid">
+ <form class="form-box" id="orderForm"><div class="kicker">LET'S WORK TOGETHER</div><h2>Order Now</h2><p>Share your project details. We'll prepare a WhatsApp message for you.</p>
+ <div class="form-row"><div><label for="name">Your Name *</label><input id="name" name="name" required maxlength="80" placeholder="Enter your name"></div><div><label for="phone">WhatsApp Number *</label><input id="phone" name="phone" type="tel" required maxlength="20" placeholder="Your phone number"></div></div>
+ <label for="service">Select Service *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Logo Design</option><option>Poster Design</option><option>Visiting Card</option><option>Website Design</option><option>Social Media Design</option><option>Brochure Design</option><option>Flyer Design</option><option>Photo Editing</option><option>Social Media Ads</option></select>
+ <label for="details">Project Details *</label><textarea id="details" name="details" required maxlength="1500" placeholder="Describe what you need..."></textarea>
+ <button class="btn whatsapp" type="submit">◉ &nbsp; Order on WhatsApp →</button><div id="formMessage" class="contact-note" role="status"></div>
+ <div class="contact-note">WhatsApp: <a href="https://wa.me/918750663052" target="_blank" rel="noopener">8750-663-3052</a></div>
+ </form>
+ <div class="order-art"><h3>Let's Create<br>Something Amazing!</h3><div class="benefit"><span>✍</span> Creative Designs</div><div class="benefit"><span>⚡</span> Fast Delivery</div><div class="benefit"><span>◇</span> Affordable Prices</div><div class="benefit"><span>♡</span> Customer Satisfaction</div><p style="font-size:35px;text-align:right;margin-top:18px">☕ 🪴</p><p style="color:#c3b5ff;text-align:right;font-style:italic">Good Design Builds Better Brands</p></div>
+</div></section>
+</main>
+<footer><div class="container footer-row">
+ <a class="brand" href="#home"><span class="logo">DK</span><span><strong>Creative Studio</strong><small>DESIGN · BRAND · GROW</small></span></a>
+ <div class="socials" aria-label="Social media">
+  <a href="https://www.instagram.com/codewithlearn10/" target="_blank" rel="noopener noreferrer" title="Instagram">◎</a>
+  <a href="https://www.youtube.com/@codewithleaarn10" target="_blank" rel="noopener noreferrer" title="YouTube">▶</a>
+  <a href="https://www.facebook.com/codewithlearn" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+  <a href="https://www.linkedin.com/search/results/people/?keywords=Dipak%20Kumar" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+  <a href="mailto:codewithlearn10@gmail.com" title="Email">✉</a>
+ </div>
+ <div class="footer-contact"><a href="mailto:codewithlearn10@gmail.com">codewithlearn10@gmail.com</a><br>WhatsApp: <a href="https://wa.me/918750663052">8750-663-3052</a></div>
+</div><div class="container copyright">© <span id="year"></span> DK Creative Studio. All rights reserved. &nbsp; | &nbsp; <a href="admin.html">Admin Panel</a></div></footer>
+<script>
+const WHATSAPP_NUMBER="918750663052";
+document.getElementById("year").textContent=new Date().getFullYear();
+const menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuBtn.textContent=open?"✕":"☰";menuBtn.setAttribute("aria-expanded",String(open));});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menuBtn.textContent="☰";menuBtn.setAttribute("aria-expanded","false");}));
+const words=["Creativity","Design","Your Brand","Ideas"];let wi=0;
+setInterval(()=>{wi=(wi+1)%words.length;document.getElementById("heroWord").textContent=words[wi]},5000);
+document.querySelectorAll("[data-service]").forEach(a=>a.addEventListener("click",()=>{document.getElementById("service").value=a.dataset.service}));
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const enquiry={id:Date.now(),name:document.getElementById("name").value.trim(),phone:document.getElementById("phone").value.trim(),service:document.getElementById("service").value,details:document.getElementById("details").value.trim(),date:new Date().toLocaleString()};
+ try{const items=JSON.parse(localStorage.getItem("dkEnquiries")||"[]");items.push(enquiry);localStorage.setItem("dkEnquiries",JSON.stringify(items));}catch(err){}
+ const message=`Hello DK Creative Studio!\nName: ${enquiry.name}\nPhone: ${enquiry.phone}\nService: ${enquiry.service}\nProject Details: ${enquiry.details}`;
+ document.getElementById("formMessage").textContent="WhatsApp is opening. Press Send in WhatsApp to send your enquiry.";
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
+});
+</script>
+</body>
+</html>
